@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-/*Script para Main Camera (1.1)
+/*Script para Main Camera (1.2)
  * Este script permitira que la camara siga libremente al objeto que se 
  * especifique. Ademas, cuenta con un suavizado en el movimiento para
  * generar mas comodidad visual
@@ -30,6 +30,8 @@
  * Version (1.1) domingo 13 de mayo 2018
  * Modificacion de la documentacion y subida del script a GitHub
  *
+ * Version (1.2) martes 15 de mayo 2018
+ * Correccion de errores menores
  */
 
 public class Camara : MonoBehaviour {
@@ -40,7 +42,7 @@ public class Camara : MonoBehaviour {
 	void FixedUpdate ()
     {
         Vector3 posicion = Target.position + offset;
-        Vector3 suavizado = Vector3.Lerp(transform.position, posicion, Velocidad)
+        Vector3 suavizado = Vector3.Lerp(transform.position, posicion, Velocidad);
         transform.position = suavizado;
 	}
 }
